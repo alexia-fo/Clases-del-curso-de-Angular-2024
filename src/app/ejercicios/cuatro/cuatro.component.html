@@ -1,0 +1,5 @@
+<div>
+  <input [(ngModel)]="entrada" type="text" placeholder="Ingresa números separados por comas">
+  <button (click)="mostrarPrimerElemento()">Mostrar Primer Elemento</button>
+  <p *ngIf="primerElemento !== null">Primer Elemento: {{ primerElemento }}</p>
+</div>

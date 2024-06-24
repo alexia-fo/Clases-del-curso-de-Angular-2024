@@ -1,69 +1,106 @@
 <!--S----------------------------------------CLASE 1-->
-<h1>Clase 1</h1>
+<!-- <h1>Clase 1</h1> -->
 
-<h2>Interpolación (One-Way Binding)</h2>
+<!-- <h2>Interpolación (One-Way Binding)</h2> -->
 <!--!Mostrar una Variable Simple-->
-<p>Hola, mi nombre es {{ nombre }}.</p>
+<!-- <p>Hola, mi nombre es {{ nombre }}.</p> -->
 
 <!--!Operaciones y Expresiones-->
-<p>Tengo {{ edad + 5 }} años.</p>
+<!-- <p>Tengo {{ edad + 5 }} años.</p> -->
 
 <!--!Mostrar Propiedades de Objetos-->
-<p>Usuario: {{ usuario.nombre }} de {{ usuario.ciudad }}.</p>
+<!-- <p>Usuario: {{ usuario.nombre }} de {{ usuario.ciudad }}.</p> -->
 
 <!--!Mostrar Resultados de Métodos-->
 
-<p> {{ obtenerSaludo() }}</p>
+<!-- <p> {{ obtenerSaludo() }}</p> -->
 
 
 <!--?------------------Property Binding (One-Way Binding)--------------->
-<h2>Property Binding (One-Way Binding)</h2>
+<!-- <h2>Property Binding (One-Way Binding)</h2> -->
 
 <!--!Asignar un Valor a un Atributo-->
-<img [src]="imagenUrl" alt="Imagen" width="60" height="60" />
-<br>
+<!-- <img [src]="imagenUrl" alt="Imagen" width="60" height="60" />
+<br> -->
 
 <!--!Habilitar o Deshabilitar un Elemento-->
-<button [disabled]="esHabilitado">Habilitado/Deshabilitado</button>
+<!-- <button [disabled]="esHabilitado">Habilitado/Deshabilitado</button>
 <br>
-<br>
+<br> -->
 
 <!--!Cambiar Estilos Dinámicamente-->
-<div [class.btn-danger]="esDestacado">Texto destacado</div>
-<br>
+<!-- <div [class.btn-danger]="esDestacado">Texto destacado</div>
+<br> -->
 
 <!--!Enlazar Evento-->
-<button (click)="onClick()">Haz clic</button>
-<br>
+<!-- <button (click)="onClick()">Haz clic</button>
+<br> -->
 
 <!--?------------------Event Binding (One-Way Binding)--------------->
 <!--!Cambiar Propiedades Dinámicamente-->
 
-<h2>Event Binding (One-Way Binding)</h2>
+<!-- <h2>Event Binding (One-Way Binding)</h2>
 <p>Al presionar el boton se habilita y deshabilita el campo</p>
 <input [disabled]="esDeshabilitado" />
- <button (click)="toggleHabilitado()">Alternar</button>
+<button (click)="toggleHabilitado()">Alternar</button>
 <br>
-<br>
+<br> -->
 
 <!--!Enlazar a Eventos de Entrada-->
-<p>Lo que escribas en este input se va a imprimir</p>
+<!-- <p>Lo que escribas en este input se va a imprimir</p>
 <input (keyup)="mostrarValor($event)" />
 <br>
-<br>
+<br> -->
 
 <!--!Enlazar a Eventos de Mouse-->
-<div (mouseenter)="mostrarMensaje()">Pasa el mouse aquí para imprimir mensaje</div>
-<br>
+<!-- <div (mouseenter)="mostrarMensaje()">Pasa el mouse aquí para imprimir mensaje</div>
+<br> -->
 
 <!--?------------------Enlace bidireccional (One-Way Binding)--------------->
 
 <!--!Enlazar una Variable a un Campo de Entrada-->
-<h4>Enlazar una Variable a un Campo de Entrada</h4>
+<!-- <h4>Enlazar una Variable a un Campo de Entrada</h4>
 <input [(ngModel)]="nombreElazado" placeholder="Escribe tu nombre" />
- <p>Tu nombre es: {{ nombreElazado }}</p>
+<p>Tu nombre es: {{ nombreElazado }}</p> -->
 
 
 <!--!Manejo de Cambios en el Componente-->
-<h4>Manejo de Cambios en el Componente</h4>
- <input [(ngModel)]="nombreIm" (ngModelChange)="actualizarNombre($event)" />
+<!-- <h4>Manejo de Cambios en el Componente</h4>
+<input [(ngModel)]="nombreIm" (ngModelChange)="actualizarNombre($event)" /> -->
+
+
+<!--TODO: --------------------clase 2------------------------------>
+<!-- <h1>Clase 2</h1>
+
+<h2>NgIf</h2>
+<div *ngIf="mostrarTexto">Hola Mundo - mediante ngIF</div>
+
+<div *ngFor="let item of lista">
+  {{item}}
+</div>
+
+ <h2>Switch-case</h2>
+<div [ngSwitch]="valor">
+  <div *ngSwitchCase="'uno'">Uno</div>
+  <div *ngSwitchCase="'dos'">Dos</div>
+  <div *ngSwitchDefault>Default</div>
+</div>
+
+<h2>ngClass</h2>
+<div [ngClass]="{'clase-activa': activo}">Texto</div>
+
+<h2>ngStyle</h2>
+<div [ngStyle]="{'color': color}">Texto coloreado</div> -->
+
+
+<!--!Ejercicio 1 - Clase2-->
+<!-- <h1>Ejemplo 1 - clase 2</h1> -->
+<!-- <app-uno-clase2></app-uno-clase2> -->
+
+
+<!-- <h1>Ejemplo 2 - clase 2</h1>
+<router-outlet></router-outlet> -->
+
+<!-- <app-lista-usuarios></app-lista-usuarios> -->
+
+<router-outlet></router-outlet>

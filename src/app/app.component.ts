@@ -401,4 +401,17 @@ export class AppComponent {
       console.log("Palabra 1:", this.palabra1, "Palabra 2:", this.palabra2);
     }
 
-}
+    //TODO: --------------------clase 2------------------------------
+
+    //?-------------Directivas-----------------
+    mostrarTexto=true;
+
+    lista = [1, 4, 7];
+
+    valor = "uno";
+
+    activo=false;
+
+    color="green";
+
+  }

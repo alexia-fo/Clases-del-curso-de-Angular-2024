@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DosComponent } from './dos.component';
+import { ListarUsuariosComponent } from './listar-usuarios.component';
 
-describe('DosComponent', () => {
-  let component: DosComponent;
-  let fixture: ComponentFixture<DosComponent>;
+describe('ListarUsuariosComponent', () => {
+  let component: ListarUsuariosComponent;
+  let fixture: ComponentFixture<ListarUsuariosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DosComponent]
+      declarations: [ListarUsuariosComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DosComponent);
+    fixture = TestBed.createComponent(ListarUsuariosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

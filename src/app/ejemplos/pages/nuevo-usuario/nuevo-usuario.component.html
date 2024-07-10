@@ -1,0 +1,34 @@
+<div class="container">
+  <form [formGroup]="form" (submit)="guardar()" class="row">
+    <div class="col-sm-6">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input formControlName="nombre" type="text" class="form-control" />
+      <small *ngIf="datoInvalido('nombre')" class="text-danger">{{mensaje('nombre')}}</small>
+    </div>
+    <div class="col-sm-6">
+      <label for="correo" class="form-label">Correo</label>
+      <input formControlName="correo" type="email" class="form-control" />
+      <small *ngIf="datoInvalido('correo')" class="text-danger">{{mensaje('correo')}}</small>
+    </div>
+    <div class="col-md-6">
+      <label for="contra" class="form-label">Contrasena</label>
+      <input formControlName="contra" type="password" class="form-control" />
+      <small *ngIf="datoInvalido('contra')" class="text-danger">{{mensaje('contra')}}</small>
+    </div>
+      <div class="col-md-6">
+      <label for="confirmacion" class="form-label">Confirmar Contrasena</label>
+      <input formControlName="confirmacion" type="password" class="form-control"/>
+      <small *ngIf="datoInvalido('confirmacion')" class="text-danger">{{mensaje('confirmacion')}}</small>
+    </div>
+
+    <div class="col-md-6">
+      <label for="idrol" class="form-label">Rol</label>
+      <select formControlName="idrol" class="form-select" id="idrol">
+        <option *ngFor="let r of roles" [value]="r.id">{{ r.rol }}</option>
+      </select>
+    </div>
+    <div class="col-md-6 mt-4">
+      <button *ngIf="!cargandoOp" type="submit" class="btn btn-success w-100">Guardar</button>
+    </div>
+  </form>
+</div>

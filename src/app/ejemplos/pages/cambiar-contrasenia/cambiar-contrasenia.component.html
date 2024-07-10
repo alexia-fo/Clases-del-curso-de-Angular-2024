@@ -1,0 +1,12 @@
+<div class="container">
+  <form [formGroup]="form" (submit)="guardar()" class="row">
+    <div class="col-md-6">
+      <label for="contra" class="form-label">Contrasena</label>
+      <input formControlName="contra" type="password" class="form-control" />
+    </div>
+
+    <div class="col-md-6 mt-4">
+      <button *ngIf="!cargandoOp" type="submit" class="btn btn-success w-100">Guardar</button>
+    </div>
+  </form>
+</div>

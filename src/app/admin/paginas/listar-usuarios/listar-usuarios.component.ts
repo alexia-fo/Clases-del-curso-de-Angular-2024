@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Usuario } from '../../models/usuario.model';
+import { RespUsuarios, Usuario } from '../../models/usuario.model';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-listar-usuarios',
@@ -7,18 +8,20 @@ import { Usuario } from '../../models/usuario.model';
   styleUrl: './listar-usuarios.component.css'
 })
 export class ListarUsuariosComponent {
-  usuarios:Usuario[]=[
-    {
-      id:1,
-      nombre:"Alexia",
-      correo:"alexia@gmail.com",
-      estado:true
-    },
-    {
-      id:2,
-      nombre:"Carlos",
-      correo:"carlos@gmail.com",
-      estado:false
-    }
-  ]
+  usuarios: Usuario[] = []
+
+  constructor(
+    private servicioU: UsuarioService
+  ) { }
+
+  ngOnInit() {
+    this.servicioU.getUsuarios()
+    .subscribe({
+      next:(res:RespUsuarios)=>{
+        this.usuarios=res.usuarios;
+        console.log(this.usuarios)
+      }
+    })
+  }
+
 }

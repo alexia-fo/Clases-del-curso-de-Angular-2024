@@ -1,0 +1,21 @@
+<div class="container">
+  <form [formGroup]="form" (submit)="guardar()" class="row">
+    <div class="col-sm-6">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input formControlName="nombre" type="text" class="form-control" />
+    </div>
+    <div class="col-sm-6">
+      <label for="correo" class="form-label">Correo</label>
+      <input formControlName="correo" type="email" class="form-control" />
+    </div>
+    <div class="col-md-6">
+      <label for="idrol" class="form-label">Rol</label>
+      <select formControlName="idrol" class="form-select" id="idrol">
+        <option *ngFor="let r of roles" [value]="r.id">{{ r.rol }}</option>
+      </select>
+    </div>
+    <div class="col-md-6 mt-4">
+      <button *ngIf="!cargandoOp" type="submit" class="btn btn-success w100">Guardar</button>
+    </div>
+  </form>
+</div>

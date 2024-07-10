@@ -1,18 +1,23 @@
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>nombre</th>
-      <th>correo</th>
-      <th>estado</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let u of usuarios">
-      <td>{{u.id}}</td>
-      <td>{{u.nombre}}</td>
-      <td>{{u.correo}}</td>
-      <td>{{u.estado}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>nombre</th>
+        <th>correo</th>
+        <th>estado</th>
+        <th>Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of usuarios">
+        <td>{{u.id}}</td>
+        <td>{{u.nombre}}</td>
+        <td>{{u.correo}}</td>
+        <td>{{u.estado}}</td>
+        <td [routerLink]="['../editarUsuario', u.id]">Editar</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

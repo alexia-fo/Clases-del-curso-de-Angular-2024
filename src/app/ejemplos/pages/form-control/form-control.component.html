@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit()"> <!--(ngSubmit)="onSubmit()"  RECARGA LA PAGINA-->
+  <label for="firstName">First Name</label>
+  <input id="firstName" [formControl]="firstName">
+
+  <label for="lastName">Last Name</label>
+  <input id="lastName" [formControl]="lastName">
+
+  <!-- <button type="button" (click)="onSubmit()">Submit</button> -->
+  <button type="submit">Submit</button>
+</form>

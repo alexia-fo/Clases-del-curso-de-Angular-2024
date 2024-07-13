@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { UsersService } from '../../../ejemplos/services/users.service';
-import { switchMap, tap } from 'rxjs';
+import { forkJoin, switchMap, tap } from 'rxjs';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-editar-usuario',
@@ -24,7 +24,7 @@ export class EditarUsuarioComponent {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private servicioU: UsersService
+    private servicioU: UsuarioService
   ) { }
 
   ngOnInit() {
@@ -33,37 +33,57 @@ export class EditarUsuarioComponent {
       correo: [''],
       idrol: [''],
     });
+
+    // this.route.params
+    //   .pipe(
+    //     switchMap(params => {
+    //       this.idUsuario = params['id'];
+    //       return this.servicioU.getUsuario(this.idUsuario);
+    //     }),
+    //   )
+    //   .subscribe({
+    //     next: (usuario: Usuario) => {
+    //       this.form.patchValue(usuario);
+    //     },
+    //     error:(error)=>{
+    //       console.log(error)
+    //     }
+    //     //TODO: por ahora no tiene manejo de errores
+    //   });
+
+
     this.route.params
       .pipe(
         switchMap(params => {
           this.idUsuario = params['id'];
-          return this.servicioU.getUsuario(this.idUsuario);
-        }),
+          return forkJoin({
+            usuario: this.servicioU.getUsuario(this.idUsuario),
+            roles: this.servicioU.getRoles()
+          });
+        })
       )
       .subscribe({
-        next: (usuario: Usuario) => {
+        next: ({ usuario, roles }) => {
           this.form.patchValue(usuario);
+          this.roles = roles.roles;
         },
-        error:(error)=>{
-          console.log(error)
-        }
-        //TODO: por ahora no tiene manejo de errores
+        //TODO: todavia no tiene manejo de errores
       });
 
 
-      // this.route.params
-      // .subscribe({
-      //   next:(params:any)=>{
-      //     this.idUsuario=params['id']
-      //   }
-      // })
+    // this.route.params
+    // .subscribe({
+    //   next:(params:any)=>{
+    //     this.idUsuario=params['id']
+    //   }
+    // })
 
-      // this.servicioU.getUsuario(this.idUsuario)
-      // .subscribe({
-      //   next:(usuario:Usuario)=>{
+    // this.servicioU.getUsuario(this.idUsuario)
+    // .subscribe({
+    //   next:(usuario:Usuario)=>{
 
-      //   }
-      // })
+    //   }
+    // })
   }
 
   guardar() {

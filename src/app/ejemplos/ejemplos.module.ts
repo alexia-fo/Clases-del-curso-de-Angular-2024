@@ -7,11 +7,6 @@ import { FormBuilderComponent } from './pages/form-builder/form-builder.componen
 import { FormGroupComponent } from './pages/form-group/form-group.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormControlComponent } from './pages/form-control/form-control.component';
-import { CambiarContraseniaComponent } from './pages/cambiar-contrasenia/cambiar-contrasenia.component';
-import { NuevoUsuarioComponent } from './pages/nuevo-usuario/nuevo-usuario.component';
-import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
-import { ListaUsuariosComponent } from './pages/lista-usuarios/lista-usuarios.component';
-
 
 @NgModule({
   declarations: [
@@ -19,10 +14,6 @@ import { ListaUsuariosComponent } from './pages/lista-usuarios/lista-usuarios.co
     FormBuilderComponent,
     FormGroupComponent,
     FormControlComponent,
-    CambiarContraseniaComponent,
-    NuevoUsuarioComponent,
-    EditarUsuarioComponent,
-    ListaUsuariosComponent,
   ],
   imports: [
     CommonModule,

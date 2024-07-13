@@ -26,4 +26,7 @@ export interface UpdateUsuario extends Omit<Usuario, 'id' | 'createdAt' | 'updat
 export interface UpdateUsuario extends Omit<Usuario, 'id' | 'createdAt' | 'updatedAt' | 'estado'>{
 }
 
+export interface ResUsuarioDelete{
+  mensaje:string;
+}
 

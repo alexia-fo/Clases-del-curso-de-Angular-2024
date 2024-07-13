@@ -7,6 +7,7 @@
         <th>correo</th>
         <th>estado</th>
         <th>Editar</th>
+        <th>Eliminar</th>
       </tr>
     </thead>
     <tbody>
@@ -15,7 +16,12 @@
         <td>{{u.nombre}}</td>
         <td>{{u.correo}}</td>
         <td>{{u.estado}}</td>
-        <td [routerLink]="['../editarUsuario', u.id]">Editar</td>
+        <td [routerLink]="['../editarUsuario', u.id]">
+          <button class="btn btn-secondary"><i class="bi bi-pencil-square"></i></button>
+        </td>
+        <td class="text-center">
+          <button class="btn btn-danger" (click)="eliminar(u.id)"><i class="bi bi-trash"></i></button>
+        </td>
       </tr>
     </tbody>
   </table>
